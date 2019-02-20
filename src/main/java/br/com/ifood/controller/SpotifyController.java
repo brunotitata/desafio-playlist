@@ -20,7 +20,7 @@ public class SpotifyController {
     private OpenWeatherLatLonService openWeatherLatLonService;
 
     @GetMapping("/cidade")
-    public ResponseEntity<PlaylistDTO> sugerirTracksPelaTemperatura(
+    public ResponseEntity<PlaylistDTO> sugerirTracks(
             @RequestParam String nome) {
 
         return ResponseEntity.ok()
@@ -28,8 +28,8 @@ public class SpotifyController {
     }
 
     @GetMapping("/coordenadas")
-    public ResponseEntity<PlaylistDTO> sugerirTracksPelaTemperatura(
-            @RequestParam String lat, @RequestParam String lon) {
+    public ResponseEntity<PlaylistDTO> sugerirTracks(@RequestParam String lat,
+            @RequestParam String lon) {
 
         return ResponseEntity.ok()
                 .body(openWeatherLatLonService.listarTracks(lat, lon));
